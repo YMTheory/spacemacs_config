@@ -57,6 +57,7 @@ This function should only modify configuration layer settings."
      syntax-checking
      ;; version-control
      ymtheory
+     ;; ymtheory-u
      treemacs
      )
 
@@ -217,7 +218,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil, show file icons for entries and headings on Spacemacs home buffer.
    ;; This has no effect in terminal or if "all-the-icons" package or the font
    ;; is not installed. (default nil)
-   dotspacemacs-startup-buffer-show-icons nil
+   dotspacemacs-startup-buffer-show-icons t
 
    ;; Default major mode for a new empty buffer. Possible values are mode
    ;; names such as `text-mode'; and `nil' to use Fundamental mode.
@@ -252,7 +253,9 @@ It should only modify the values of Spacemacs settings."
    ;; refer to the DOCUMENTATION.org for more info on how to create your own
    ;; spaceline theme. Value can be a symbol or list with additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
+   dotspacemacs-mode-line-theme '(all-the-icons)
+   ;; dotspacemacs-mode-line-theme '(spacemacs :separator alternate :separator-scale 1.5)
+   ;; dotspacemacs-mode-line-theme '(custom)
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -262,7 +265,7 @@ It should only modify the values of Spacemacs settings."
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 17.0
+                               :size 16.0
                                :weight normal
                                :width normal)
 
@@ -568,6 +571,24 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+  ;; (use-package doom-modeline
+  ;;   :ensure t
+  ;;   :init (doom-modeline-mode 1)
+  ;;   :config
+  ;;   ;; Enable flashing mode-line on errors
+  ;;   (doom-themes-visual-bell-config)
+
+  ;;   ;; Corrects (and improves) org-mode's native fontification.
+  ;;   (doom-themes-org-config)
+  ;;   )
+
+  ;;(defun spaceline-custom-theme (&rest additional-segments)
+  ;;  "My custom spaceline theme."
+  ;;  (spaceline-compile
+  ;;    `(major-mode (minor-modes :when active) buffer-id)
+  ;;    `((line-column :separator " | " :priority 3)
+  ;;      ,@additional-segments))
+  ;;  (setq-default mode-line-format '("%e" (:eval (spaceline-ml-main)))))
 )
 
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))

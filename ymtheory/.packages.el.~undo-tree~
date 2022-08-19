@@ -1,0 +1,7 @@
+(undo-tree-save-format-version . 1)
+"da6f76a30ff7869f314fec3975f35da0c95023f2"
+[nil nil nil nil (25343 11872 132212 0) 0 nil]
+([nil nil ((nil rear-nonsticky nil 305 . 306) (nil fontified nil 1 . 306) (1 . 306) (t 25343 11872 136206 596000)) nil (25343 11953 501670 0) 0 nil])
+([nil nil ((#("zilongshanren" 0 13 (fontified t face font-lock-function-name-face)) . 123) (136 . 144) (#("zilongshanren" 0 13 (fontified t face font-lock-variable-name-face)) . 25) (38 . 46)) nil (25343 11953 501667 0) 0 nil])
+([nil current ((296 . 297)) nil (25343 11953 501661 0) 0 nil])
+nil

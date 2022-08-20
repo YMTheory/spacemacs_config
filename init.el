@@ -48,7 +48,10 @@ This function should only modify configuration layer settings."
      lsp
      markdown
      multiple-cursors
-     org
+     ;; org
+     (org :variables
+          org-enable-roam-ui t
+          org-enable-roam-protocol t)
      (colors :variables colors-enable-nyan-cat-progress-bar t)
      ;; (shell :variables
      ;;        shell-default-height 30
@@ -589,6 +592,12 @@ before packages are loaded."
   ;;    `((line-column :separator " | " :priority 3)
   ;;      ,@additional-segments))
   ;;  (setq-default mode-line-format '("%e" (:eval (spaceline-ml-main)))))
+  (with-eval-after-load 'org-agenda
+    (require 'org-projectile)
+    (mapcar '(lambda (file)
+               (when (file-exists-p file)
+                 (push file org-agenda-files)))
+            (org-projectile-todo-files)))
 )
 
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))

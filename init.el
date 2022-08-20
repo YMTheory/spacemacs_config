@@ -48,11 +48,15 @@ This function should only modify configuration layer settings."
      lsp
      markdown
      multiple-cursors
+     (mu4e :variables
+           mu4e-installation-path "/usr/local/share/emacs/site-lisp/mu/mu4e/")
      ;; org
      (org :variables
           org-enable-roam-ui t
           org-enable-roam-protocol t)
      (colors :variables colors-enable-nyan-cat-progress-bar t)
+     ivy
+     osx
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -73,7 +77,7 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(counsel)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -246,7 +250,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(
+                         spacemacs-dark
                          spacemacs-light)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',

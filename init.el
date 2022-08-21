@@ -66,6 +66,8 @@ This function should only modify configuration layer settings."
      ymtheory
      ;; ymtheory-u
      treemacs
+     ;; dash
+     search-engine
      )
 
 

@@ -17,10 +17,11 @@
   )
 
 
-(defun ymtheory/init-org-alert()
+(defun ymtheory/init-org-alert ()
 
   (use-package org-alert
     :ensure t
+    :defer t
     :costum (alert-default-style 'notifications)
     :config
     (setq org-alert-interval 300

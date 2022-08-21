@@ -48,8 +48,8 @@ This function should only modify configuration layer settings."
      lsp
      markdown
      multiple-cursors
-     (mu4e :variables
-           mu4e-installation-path "/usr/local/share/emacs/site-lisp/mu/mu4e/")
+     ;; (mu4e :variables
+     ;;       mu4e-installation-path "/usr/local/share/emacs/site-lisp/mu/mu4e/")
      ;; org
      (org :variables
           org-enable-roam-ui t
@@ -77,7 +77,7 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(counsel)
+   dotspacemacs-additional-packages '(counsel org-alert)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -603,7 +603,7 @@ before packages are loaded."
                (when (file-exists-p file)
                  (push file org-agenda-files)))
             (org-projectile-todo-files)))
-)
+  )
 
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
 (load custom-file 'no-error 'no-message)

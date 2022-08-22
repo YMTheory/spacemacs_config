@@ -38,7 +38,8 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     auto-completion
+     (auto-completion :variables
+                      auto-completion-enable-snippets-in-popup t)
      better-defaults
      emacs-lisp
      git
@@ -64,7 +65,7 @@ This function should only modify configuration layer settings."
      syntax-checking
      ;; version-control
      ymtheory
-     ;; ymtheory-u
+     ;; ymtheory-programming
      treemacs
      ;; dash
      search-engine
@@ -79,7 +80,7 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(counsel org-alert)
+   dotspacemacs-additional-packages '(counsel)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()

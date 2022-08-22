@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: uproot-load-array
+# key: <up
+# --
+
+f = up.open(${1:filename})
+${2:array} = f[${3:treename}][${4:branchname}].array()
+$0

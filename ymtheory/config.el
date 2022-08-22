@@ -4,6 +4,21 @@
 ;; 定义快捷键
 (global-set-key (kbd "M-s o") 'occur-dwim)
 
+(add-hook 'org-pomodoro-finished-hook
+          (lambda ()
+	          (notify-osx "Pomodoro completed!" "Time for a break.")))
+(add-hook 'org-pomodoro-break-finished-hook
+          (lambda ()
+	          (notify-osx "Pomodoro Short Break Finished" "Ready for Another?")))
+(add-hook 'org-pomodoro-long-break-finished-hook
+          (lambda ()
+	          (notify-osx "Pomodoro Long Break Finished" "Ready for Another?")))
+(add-hook 'org-pomodoro-killed-hook
+          (lambda ()
+	          (notify-osx "Pomodoro Killed" "One does not simply kill a pomodoro!")))
+
+
+
 ;; 将 occur 的 buffer 中的光标移动方式修改为 HJKL
 ;;(evilified-state-evilify-map occur-mode-map
 ;;  :mode occur-mode)

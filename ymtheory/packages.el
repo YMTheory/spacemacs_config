@@ -18,15 +18,15 @@
 
 
 (defun ymtheory/init-org-alert ()
-
   (use-package org-alert
     :ensure t
-    :defer t
-    :costum (alert-default-style 'notifications)
+    :custom (alert-default-style 'osx-notifier)
     :config
     (setq org-alert-interval 300
           org-alert-notification-title '"Org Alter Reminder!")
     (org-alert-enable)
-    )
-
+    (spacemacs/set-leader-keys "oc" 'org-alert-check)
   )
+)
+
+;; (require 'org-alert)

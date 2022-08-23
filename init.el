@@ -47,6 +47,7 @@ This function should only modify configuration layer settings."
      python
      ipython-notebook
      lsp
+     dap
      markdown
      multiple-cursors
      ;; (mu4e :variables

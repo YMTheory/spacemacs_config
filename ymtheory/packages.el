@@ -2,7 +2,8 @@
 (defconst ymtheory-packages
   '(
     youdao-dictionary
-    org-alert
+    ;; org-alert
+    org-notify
     )
   )
 
@@ -17,16 +18,27 @@
   )
 
 
-(defun ymtheory/init-org-alert ()
-  (use-package org-alert
-    :ensure t
-    :custom (alert-default-style 'osx-notifier)
-    :config
-    (setq org-alert-interval 300
-          org-alert-notification-title '"Org Alter Reminder!")
-    (org-alert-enable)
-    (spacemacs/set-leader-keys "oc" 'org-alert-check)
+;; (defun ymtheory/init-org-alert ()
+;;   (use-package org-alert
+;;     :ensure t
+;;     :custom (alert-default-style 'osx-notifier)
+;;     :config
+;;     (setq org-alert-interval 300
+;;           org-alert-notification-title '"Org Alter Reminder!")
+;;     (org-alert-enable)
+;;     (spacemacs/set-leader-keys "oc" 'org-alert-check)
+;;   )
+;; )
+
+
+(defun ymtheory/init-org-notify ()
+  (use-package org-notify
+  :ensure t
+  :after org
+  :config
+  (org-notify-start)
   )
 )
+
 
 ;; (require 'org-alert)
